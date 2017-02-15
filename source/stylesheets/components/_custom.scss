@@ -1,0 +1,91 @@
+.brand {
+	img {
+		width: 200px;
+		height: 55px;
+		vertical-align: middle;
+	}
+}
+
+.test {
+
+	@include cover-background('../../dist/img/5-min.jpg')
+	@include mobile {
+		@include cover-background('../../dist/img/mob5-min.jpg')
+	}
+	// @include vw-height(250px, 490px, 1200px);
+	height: 100%;
+}
+
+.test2 {
+	@include cover-background('../../dist/img/6-min.jpg')
+	@include mobile {
+		@include cover-background('../../dist/img/mob2-min.jpg')
+	}
+	@include vw-height(400px, 620px, 1200px);
+	// height: 100%;
+}
+
+.test3 {
+	@include cover-background('../../dist/img/4-min.jpg')
+	@include mobile {
+		@include cover-background('../../dist/img/mob4-min.jpg')
+	}
+	@include vw-height(400px, 620px, 1200px);
+	// height: 100%;
+}
+
+.paraxify {
+  @include desktop{
+  	 background-attachment: fixed;
+	 background-position: center center;
+	 background-size: cover;
+  }	
+ 
+}
+
+.banner-title {
+	
+	max-width: 65%;
+	@include mobile {
+		max-width: 100%;
+	}
+
+	h1 {
+		margin: 0;
+		display: inline-block;
+		background: #fff;
+		padding: 0.5em 0.25em 0.27em 0.25em;
+		text-transform: uppercase;
+	}
+}
+
+.banner-container {
+  @extend .container;
+  padding: 80px 30px;
+  // max-width: $small;
+}
+
+#instafeed {
+    @include clearFix;
+	
+	.ig-item {
+		@include grid(4, 2%);
+		@include mobile {
+			@include grid(2, 2%)
+		}
+		img{
+			width: 100%;
+		}
+	}
+}
+
+.food {
+	@include clearFix;
+
+	.food-item {
+		@include grid(3,5%)
+		@include mobile {
+			width: 100%;
+		}
+	}
+}

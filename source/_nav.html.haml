@@ -1,0 +1,32 @@
+%nav.dt-nav
+  .container
+    .inline-block.float-left
+      %a.brand
+        %img
+  .links.inline-block.float-right
+    =link_to 'StrEAT', 'streat.html'
+    =link_to 'HQ', 'hq.html'
+    =link_to 'The Yard', 'hq.html'
+    =link_to 'Megamall', 'hq.html'
+    =link_to 'Jobs', 'hq.html'
+  .mobile-toggle.toggle-overlay.inline-block.float-right
+    %a{:href=>'#!'}
+      %span
+        %i.fa.fa-bars
+
+%aside
+  .outer-close.toggle-overlay
+    %a.close
+      %span
+  %nav.mobile-links
+    %ul
+      %li
+        %a{:href=>'#!'} StrEat
+      %li
+        %a{:href=>'#!'} HQ
+      %li
+        %a{:href=>'#!'} The Yard
+      %li
+        %a{:href=>'#!'} Megamall
+      %li
+        %a{:href=>'#!'} Jobs 

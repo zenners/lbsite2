@@ -1,0 +1,87 @@
+;;; 
+"title": "Welcome to Middleman",
+"layout": "layout",
+"locations": [
+  {
+    "name": "StrEAT",
+    "address": {
+      "primary": "blabla",
+      "secondary": "asdfa"
+    },
+    "phone": "312.3213.322"
+  },
+  {
+    "name": "Maginhawa",
+    "address": {
+      "primary": "blabla",
+      "secondary": "asdfa"
+    },
+    "phone": "312.3213.322"
+  },
+  {
+    "name": "Megamall",
+    "address": {
+      "primary": "blabla",
+      "secondary": "asdfa"
+    },
+    "phone": "312.3213.322"
+  },
+  {
+    "name": "The Yard",
+    "address": {
+      "primary": "blabla",
+      "secondary": "asdfa"
+    },
+    "phone": "312.3213.322"
+  }
+]
+;;;
+
+= partial "banner", locals:{label: "Get Lost", img: 'test'}
+
+- dato.item_types.each do |item|
+  %h1= item.name
+  - dato.items_of_type(item).each do |i|
+    %pre= i.to_hash
+
+%section.content-section.alternate-background
+  .small-container
+    .grid
+      .grid__item.grid__item--md-span-6
+        %h3 WELCOME TO THE LOST BREAD
+        %p We are people who insist on living well.
+        %p 
+          We are a community born of the belief that the good things in life ought to be shared and that great food should be accessible to all who seek it. 
+        %p 
+          Equal parts bakery, cafe and urban park, we’re proud of our space, our food and our people and we’re committed to sharing these lovely things with our community.
+        %p 
+          We are going to try new things and break some rules. But whether we’re reinventing the wheel or making toast you’d be silly not to try, we’re doing our darnedest to create an environment where trying new things is not only possible, but exciting, comfortable, superba.
+      .grid__item.grid__item--md-span-6
+        %img
+
+= partial "banner", locals:{label: "Be Found", img: 'test2'}
+
+%section.text-center.content-section.alternate-background
+  .small-container
+    %h3 LOCATIONS
+    .grid
+      - current_page.data.locations.each do |f|
+        .grid__item.grid__item--md-span-4
+          %img
+          %h4.bold= f.name
+          %p
+            %span.bold Lost Bread
+            %br
+            = "#{f.address.primary}"
+            %br
+            = "#{f.address.secondary}"
+          %p= f.phone
+          %p
+            %a directions
+          %p Sunday / Thursday 7a–10p </br>Friday/ Saturday 7a–11p
+      
+
+
+= partial "banner", locals:{label: "Connect", img: 'test3'}
+
+= partial "instafeed"
